@@ -46,15 +46,16 @@
         height: auto;
       }
     }
-    div.gallery { border: 1px solid #000; }
-    div.gallery:hover { border: 1px solid #2fda97; }
+    div.gallery { border: 1px solid #000; padding: 10px 10px 10px 10px; }
+    /* div.gallery:hover { border: 1px solid #2fda97; } */
     div.gallery img { width: 100%; height: auto; }
     div.desc { padding: 15px; text-align: center; }
 
     * { box-sizing: border-box; }
 
-    .responsive { padding: 10px 10px; float: left; width: 33.3%; }
-    @media only screen and (max-width: 500px) { .responsive { width: 100%; } }
+    .responsive { display: grid; grid-template-columns: repeat(3, 1fr); }
+    @media only screen and (max-width: 1000px) { .responsive { grid-template-columns: repeat(2, 1fr); } }
+    @media only screen and (max-width: 600px) { .responsive { grid-template-columns: repeat(1, 1fr); } }
 
     .clearfix:after { content: ""; display: table; clear: both; }
 
@@ -91,39 +92,47 @@
       <div class="responsive">
         <div class="gallery">
            <img src="img/drinks/feijoa_20190723_191846.jpg" alt="photo of a bottle of feijoa soda" title="Feijoa soda">
-          <div class="desc">ფეიხოას არომატით, "peihoas aromatit", or feijoa flavored soda, Georgia.</div>
+          <div class="desc">ფეიხოას არომატით, "peihoas aromatit", or feijoa flavored soda.<br>Georgia.</div>
         </div>
-      </div>
-      <div class="responsive">
+
         <div class="gallery">
            <img src="img/drinks/elderflower_fanta_20220910_213833.jpg" alt="photo of a bottle of elderflower soda" title="elderflower soda">
-          <div class="desc">Elderflower soda, with blue coloring, Montenegro.</div>
+          <div class="desc">Elderflower soda, with blue coloring.<br>Montenegro.</div>
         </div>
-      </div>
 
-      <div class="responsive">
         <div class="gallery">
            <img src="img/drinks/salty_lychee_20230509_094855.jpg" alt="photo of a bottle of salted lychee soda" title="salted lychee soda">
-          <div class="desc">サルティ ライチ, "saruti raichi", literally "salty lychee" written in a pseudo-Thai font, Japan. The top says "世界のKitchen", world kitchen, so probably part of an international themed series.</div>
+          <div class="desc">サルティ ライチ, "saruti raichi", literally "salty lychee" written in a pseudo-Thai font. The top says "世界のKitchen", world kitchen, so probably part of an international themed series.<br>Japan.</div>
         </div>
-      </div>
-      <div class="responsive">
+
         <div class="gallery">
            <img src="img/drinks/muscat_20230511_170938.jpg" alt="photo of a bottle of muscat soda" title="muscat soda">
-          <div class="desc">マスカット味, sparkling "Muscat" soda, with "ナイアシン", "naiashin" meaning naicin/vitamin B3, Japan.</div>
+          <div class="desc">マスカット味, sparkling "Muscat" soda, with "ナイアシン", "naiashin" meaning naicin/vitamin B3.<br>Japan.</div>
         </div>
-      </div>
 
-      <div class="responsive">
         <div class="gallery">
            <img src="img/drinks/extra_still_IMG_20160405_183151.jpg" alt="photo of a bottle of extra still water" title="extra still bottled water">
-          <div class="desc">"Extra still" water, Germany.</div>
+          <div class="desc">"Extra still" water, like more still than still.<br>Germany.</div>
         </div>
-      </div>
-      <div class="responsive">
+
         <div class="gallery">
            <img src="img/drinks/cucumber_yogurt_20220906_210316.jpg" alt="photo of a bottle of cucumber ayran" title="cucumber ayran">
-          <div class="desc">Dhallë me Kastravec, cucumber flavored Ayran, Albania.</div>
+          <div class="desc">Dhallë me Kastravec, cucumber flavored Ayran.<br>Albania</div>
+        </div>
+
+        <div class="gallery">
+           <img src="img/drinks/ultraman_20230414_214449.jpg" alt="photo of a can of Ultraman yogurt drink" title="Ultraman">
+          <div class="desc"><a href="https://en.wikipedia.org/wiki/Ultraman">Ultraman</a> yogurt drink in a can. The blue one says "原味 風味 乳酸 飲料", yuán​wèi fēng​wèi rǔsuān yǐn​liào, natural flavor yogurt drink​.<br>Taiwan.</div>
+        </div>
+
+        <div class="gallery">
+           <img src="img/drinks/bavaria_radler_IMG_20170515_000848.jpg" alt="photo of a can of grapefruit radler" title="grapefruit radler">
+          <div class="desc">Grapefruit radler, apparently "Bavarian" themed, though might be from Holland.<br>Switzerland.</div>
+        </div>
+
+        <div class="gallery">
+           <img src="img/drinks/ginseng_wine_20230128_194737.jpg" alt="photo of a bottle of ginseng wine" title="ginseng wine">
+          <div class="desc">Bottle of ginseng wine.<br>Thailand.</div>
         </div>
       </div>
 
@@ -142,74 +151,62 @@
       <div class="responsive">
         <div class="gallery">
           <img src="img/chips/bohemia_spiz_20211119_110910.jpg" alt="photo of a bag of spiz flavor potato chips" title="Spiz chips">
-          <div class="desc">Spiz, Czech Republic.</div>
+          <div class="desc">s příchutí špíz, with skewers flavor.<br>Czech Republic.</div>
         </div>
-      </div>
-      <div class="responsive">
+
         <div class="gallery">
           <img src="img/chips/bbq_chicken_20221010_122906.jpg" alt="photo of a bag of hot chicken wings potato chips" title="Hot chicken wings chips">
-          <div class="desc">Hot chicken wings, Hungary.</div>
+          <div class="desc">Hot chicken wings flavor.<br>Hungary.</div>
         </div>
-      </div>
-      <div class="responsive">
-        <div class="gallery">
-          <a href="https://en.wikipedia.org/wiki/Espelette_pepper"><img src="img/chips/chevre_piment_20220217_183158.jpg" alt="photo of a bag of chevre cheese and chili potato chips" title="Chevre and piment d'Espelette chips"></a>
-          <div class="desc">Chèvre and piment d'Espelette, meaning goat cheese and Basque chili peppers, very southern style. France.</div>
-        </div>
-      </div>
 
-      <div class="responsive">
         <div class="gallery">
-          <a href="https://en.wikipedia.org/wiki/Za'atar"><img src="img/chips/zaatar_20220303_111809.jpg" alt="photo of a bag of zaatar potato chips" title="Za'atar chips"></a>
-          <div class="desc">Za'atar, a middle eastern herb mix. Chips from Italy.</div>
+          <img src="img/chips/chevre_piment_20220217_183158.jpg" alt="photo of a bag of chevre cheese and chili potato chips" title="Chevre and piment d'Espelette chips">
+          <div class="desc">Chèvre and <a href="https://en.wikipedia.org/wiki/Espelette_pepper">piment d'Espelette</a>, meaning goat cheese and Basque chili peppers, very southern style.<br>France.</div>
         </div>
-      </div>
-      <div class="responsive">
+
+        <div class="gallery">
+          <img src="img/chips/zaatar_20220303_111809.jpg" alt="photo of a bag of zaatar potato chips" title="Za'atar chips">
+          <div class="desc"><a href="https://en.wikipedia.org/wiki/Za'atar">Za'atar</a>, a middle eastern herb mix.<br>Italy.</div>
+        </div>
+
         <div class="gallery">
           <img src="img/chips/pesto_20220407_192203.jpg" alt="photo of a bag of Ligurian pesto potato chips" title="Ligurian pesto chips">
-          <div class="desc">Pesto Ligurian style, Italy.</div>
+          <div class="desc">Ligurian style pesto, i.e. with basil and pine nuts.<br>Italy.</div>
         </div>
-      </div>
-      <div class="responsive">
+
         <div class="gallery">
-          <a href="https://en.wikipedia.org/wiki/Tzatziki"><img src="img/chips/tzatziki_20190614_193620.jpg" alt="photo of a bag of tzatziki potato chips" title="Tzatziki chips"></a>
-          <div class="desc">Tzatziki, Greece.</div>
+          <img src="img/chips/tzatziki_20190614_193620.jpg" alt="photo of a bag of tzatziki potato chips" title="Tzatziki chips">
+          <div class="desc"><a href="https://en.wikipedia.org/wiki/Tzatziki">Tzatziki</a> flavor.<br>Greece.</div>
         </div>
-      </div>
-      <div class="responsive">
+
         <div class="gallery">
           <img src="img/chips/grill_seafood_20230124_222421.jpg" alt="photo of a bag of grilled seafood potato chips" title="grilled seafood chips">
-          <div class="desc">Grilled seafood chips, Thailand.</div>
+          <div class="desc">Grilled seafood chips.<br>Thailand.</div>
         </div>
-      </div>
-      <div class="responsive">
+
         <div class="gallery">
-          <a href="https://en.wikipedia.org/wiki/Boat_noodles"><img src="img/chips/boat_noodles_20230124_222421.jpg" alt="photo of a bag of boat noodle potato chips" title="boat noodle chips"></a>
-          <div class="desc">Boat noodle chips, Thailand.</div>
+          <img src="img/chips/boat_noodles_20230124_222421.jpg" alt="photo of a bag of boat noodle potato chips" title="boat noodle chips">
+          <div class="desc"><a href="https://en.wikipedia.org/wiki/Boat_noodles">Boat noodle</a> chips.<br>Thailand.</div>
         </div>
-      </div>
-      <div class="responsive">
+
         <div class="gallery">
-          <a href="https://en.wikipedia.org/wiki/Lobster_roll"><img src="img/chips/lobster_roll_20230929_191905.jpg" alt="photo of a bag of lobster roll potato chips" title="lobster roll chips"></a>
-          <div class="desc">Lobster roll chips, Thailand.</div>
+          <img src="img/chips/lobster_roll_20230929_191905.jpg" alt="photo of a bag of lobster roll potato chips" title="lobster roll chips">
+          <div class="desc"><a href="https://en.wikipedia.org/wiki/Lobster_roll">Lobster roll</a> chips.<br>Thailand.</div>
         </div>
-      </div>
-      <div class="responsive">
+
         <div class="gallery">
-          <a href="https://en.wikipedia.org/wiki/Nam_phrik_phao"><img src="img/chips/prik_pao_cheese_20231007_131245.jpg" alt="photo of a bag of prik pao cheese potato chips" title="Prik pao cheese chips"></a>
-          <div class="desc">Prik pao cheese chips, roughly chili cheese, Thailand.</div>
+          <img src="img/chips/prik_pao_cheese_20231007_131245.jpg" alt="photo of a bag of prik pao cheese potato chips" title="Prik pao cheese chips">
+          <div class="desc"><a href="https://en.wikipedia.org/wiki/Nam_phrik_phao">Prik pao</a> cheese chips, roughly chili cheese.<br>Thailand.</div>
         </div>
-      </div>
-      <div class="responsive">
+
         <div class="gallery">
            <img src="img/chips/tom_yum_20230124_222421.jpg" alt="photo of a bag of tom yum potato chips" title="Shrimp tom yum hot pot chips">
-          <div class="desc">Shrimp tom yum hot pot chips, Thailand.</div>
+          <div class="desc">Shrimp tom yum hot pot chips.<br>Thailand.</div>
         </div>
-      </div>
-      <div class="responsive">
+
         <div class="gallery">
            <img src="img/chips/carbonara_20231007_131309.jpg" alt="photo of a bag of carbonara potato chips" title="Carbonara chips">
-          <div class="desc">Carbonara chips, Thailand. Note the Roman pasta style and the leaning tower of Pisa.</div>
+          <div class="desc">Carbonara chips. Note the Roman pasta style and the leaning tower of Pisa.<br>Thailand.</div>
         </div>
       </div>
 
