@@ -40,12 +40,24 @@
     li a { display: block;  text-align: center;  padding: 14px 20px;  text-decoration: none; }
     li a:hover { background-color: #0d3365; }
 
+
     @media (max-width: 600px) {
-      nav, article {
-        width: 100%;
-        height: auto;
-      }
+      nav, article {  height: auto;  }
     }
+
+    div.gallery { border: 1px solid #000; margin: 20px; padding: 6px 6px 3px 6px; }
+    div.gallery:hover { border: 1px solid #2fda97; }
+    div.gallery img { width: 100%; height: auto; }
+    div.desc { padding: 15px; text-align: center; }
+
+    * { box-sizing: border-box; }
+
+    .responsive { display: grid; grid-template-columns: repeat(3, 1fr); }
+    @media only screen and (max-width: 1000px) { .responsive { grid-template-columns: repeat(2, 1fr); } }
+    @media only screen and (max-width: 600px) { .responsive { grid-template-columns: repeat(1, 1fr); } }
+
+    .clearfix:after { content: ""; display: table; clear: both; }
+
     </style>
 
   </head>
@@ -76,7 +88,7 @@
         <div class="col-md-10 col-md-offset-1">
            <br><br><br><br>
            <p style="font-size:2em">I am a <a style="text-decoration:none" href="https://scholar.google.com/citations?user=FwFfVlkAAAAJ&hl=en">marine biologist</a> and <a style="text-decoration:none" href="https://github.com/wrf">programmer</a>.<br>
-             I work on a variety of topics.<br>
+             I work on a variety of topics in biology, bioinformatics, and data visualization.<br>
              </p>
            <br><br>
         </div>
@@ -92,14 +104,94 @@
       <div class="row">
         <h1 style="font-size:2em">Projects</h1><br>
       </div>
-      <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-           <a href="https://bitbucket.org/wrf/biolum-spectra" target="_blank" rel="noopener noreferrer"><img src="img/topics/bioluminescence.svg" style="width:auto;max-width:100%;height:auto;" alt="topic overview"></a>
-           <a href="https://github.com/wrf/genomeGTFtools" target="_blank" rel="noopener noreferrer"><img src="img/topics/genomics.svg" style="width:auto;max-width:100%;height:auto;" alt="topic overview"></a>
-           <a href="https://bitbucket.org/wrf/fyy-nonphotoprotein" target="_blank" rel="noopener noreferrer"><img src="img/topics/biosynthesis.svg" style="width:auto;max-width:100%;height:auto;" alt="topic overview"></a>
-           <a href="https://github.com/wrf/lavaLampPlot" target="_blank" rel="noopener noreferrer"><img src="img/topics/microbiology.svg" style="width:auto;max-width:100%;height:auto;" alt="topic overview"></a>
+      <div class="responsive">
 
-        </div>
+          <div class="gallery">
+            <a href="https://doi.org/10.3389/frym.2020.00069" target="_blank" rel="noopener noreferrer"><img src="img/topics/combined_biolum_strategies_v6.png" style="width:auto;max-width:100%;height:auto;" alt="cartoon of functions of bioluminescence">
+          <div class="desc">Introduction to bioluminescence for secondary school students</div></a>
+          </div>
+
+          <div class="gallery">
+            <a href="https://doi.org/10.1098/rsos.230423" target="_blank" rel="noopener noreferrer"><img src="img/topics/avas_genome_overview_v1.jpg" style="width:auto;max-width:100%;height:auto;" alt="graphical abstract of the genome of a glass sponge">
+          <div class="desc">The genome of the reef-building glass sponge <i>Aphrocallistes vastus</i> provides insights into silica biomineralization</div></a>
+          </div>
+
+          <div class="gallery">
+            <a href="https://academic.oup.com/g3journal/article/11/11/jkab302/6358137" target="_blank" rel="noopener noreferrer"><img src="img/topics/hormiphora_DSC_0414-c.JPG" style="width:auto;max-width:100%;height:auto;" alt="photo of the ctenophore Hormiphora">
+          <div class="desc">A chromosome-scale genome assembly and karyotype of the ctenophore <i>Hormiphora californensis</i></div></a>
+          </div>
+
+          <div class="gallery">
+            <a href="https://github.com/wrf/wrf.github.io/blob/main/mlei_catching_guide/mnemiopsis_catching_guide_v2_en.pdf" target="_blank" rel="noopener noreferrer"><img src="img/topics/mnemiopsis_catching_guide_v2_en.png" style="width:auto;max-width:100%;height:auto;" alt="Public outreach flyer on how to observe ctenophore bioluminescence">
+          <div class="desc">Public outreach flyer on how to observe bioluminescence at home</div></a>
+          </div>
+
+          <div class="gallery">
+            <a href="https://github.com/wrf/foodbalance" target="_blank" rel="noopener noreferrer"><img src="img/topics/Wine_Production_Y2020.jpg" style="width:auto;max-width:100%;height:auto;" alt="choropleth plot of global wine production">
+          <div class="desc">App for display of UN FAO global food production data</div></a>
+          </div>
+
+          <div class="gallery">
+            <a href="http://www.nature.com/articles/s41467-020-17397-w" target="_blank" rel="noopener noreferrer"><img src="img/topics/ephydatia_w_synteny_abs.png" style="width:auto;max-width:100%;height:auto;" alt="graphical abstract of the genome of a freshwater sponge">
+          <div class="desc">Tracing animal genomic evolution with the chromosomal-level assembly of the freshwater sponge <i>Ephydatia muelleri</i></div></a>
+          </div>
+
+          <div class="gallery">
+            <a href="https://github.com/wrf/envbiogeo-mgap" target="_blank" rel="noopener noreferrer"><img src="img/topics/IDP2021_temp_vs_depth_ggplot.png" style="width:auto;max-width:100%;height:auto;" alt="plot of ocean temperature against depth">
+          <div class="desc">Code and data from teaching a course on trace metal distributions</div></a>
+          </div>
+
+          <div class="gallery">
+            <a href="https://github.com/wrf/taxonomy_database" target="_blank" rel="noopener noreferrer"><img src="img/topics/metagenomes_leaflet_screenshot.jpg" style="width:auto;max-width:100%;height:auto;" alt="screenshot of metagenome samples on a map">
+          <div class="desc">App for mapping metagenomic samples from NCBI SRA</div></a>
+          </div>
+
+          <div class="gallery">
+            <a href="https://github.com/wrf/misc-analyses/tree/master/birth_rate_by_month" target="_blank" rel="noopener noreferrer"><img src="img/topics/UNdata_Export_20210419_scand_by_year.png" style="width:auto;max-width:100%;height:auto;" alt="plot of normalized monthly births in Nordic countries">
+          <div class="desc">Analysis of monthly variation of births around the world</div></a>
+          </div>
+
+          <div class="gallery">
+            <a href="https://github.com/wrf/erc-success/tree/main" target="_blank" rel="noopener noreferrer"><img src="img/topics/erc_2019_StG_granted_projects_all_panels_ratio_w_counts.jpg" style="width:auto;max-width:100%;height:auto;" alt="choropleth plot of grant success in Europe">
+          <div class="desc">Grant application success and failure across the EU</div></a>
+          </div>
+
+          <div class="gallery">
+            <a href="https://doi.org/10.1007/s00227-020-03706-w" target="_blank" rel="noopener noreferrer"><img src="img/topics/lepidisis_combined_biolum_v1.JPG" style="width:auto;max-width:100%;height:auto;" alt="photo of bioluminescence of a deep sea coral">
+          <div class="desc">Biochemical characterization of diverse deep-sea anthozoan bioluminescence systems</div></a>
+          </div>
+
+          <div class="gallery">
+            <a href="https://github.com/wrf/genome-size" target="_blank" rel="noopener noreferrer"><img src="img/topics/refseq_proks_w_elliott2015_genome_size_vs_gene_size_v1.png" style="width:auto;max-width:100%;height:auto;" alt="plot of genome size">
+          <div class="desc">Comparison of genome sizes across all domains of life</div></a>
+          </div>
+
+          <div class="gallery">
+            <a href="https://academic.oup.com/gbe/article-lookup/doi/10.1093/gbe/evx103" target="_blank" rel="noopener noreferrer"><img src="img/topics/genome_total_size_vs_feature_plot.png" style="width:auto;max-width:100%;height:auto;" alt="plot of amount of exons and introns by genome size">
+          <div class="desc">Similar ratios of introns to intergenic sequence across animal genomes</div></a>
+          </div>
+
+          <div class="gallery">
+            <a href="https://elifesciences.org/articles/31176" target="_blank" rel="noopener noreferrer"><img src="img/topics/hif_evolution_scheme_elife_dark.png" style="width:auto;max-width:100%;height:auto;" alt="schematic of evolutionary scheme of the HIF pathway in animals">
+          <div class="desc">The last common ancestor of animals lacked the HIF pathway and respired in low-oxygen environments</div></a>
+          </div>
+
+          <div class="gallery">
+            <a href="https://link.springer.com/article/10.1007/s00227-016-3028-2" target="_blank" rel="noopener noreferrer"><img src="img/topics/francis_2016_fig2_v3_w_scale.jpg" style="width:auto;max-width:100%;height:auto;" alt="photos of bioluminescence in deep sea polychaetes">
+          <div class="desc">Bioluminescence spectra from three deep-sea polychaete worms</div></a>
+          </div>
+
+          <div class="gallery">
+            <a href="https://dx.plos.org/10.1371/journal.pone.0128742" target="_blank" rel="noopener noreferrer"><img src="img/topics/ctz_from_fyy_schematic.png" style="width:auto;max-width:100%;height:auto;" alt="schematic of biosynthesis of coelenterazine">
+          <div class="desc">Occurrence of Isopenicillin-N-Synthase Homologs in Bioluminescent Ctenophores and Implications for Coelenterazine Biosynthesis</div></a>
+          </div>
+
+          <div class="gallery">
+            <a href="https://doi.wiley.com/10.1002/bio.2671" target="_blank" rel="noopener noreferrer"><img src="img/topics/tomopteris_biolum_summary_v2.jpg" style="width:auto;max-width:100%;height:auto;" alt="structure of an anthraquinone fluor">
+          <div class="desc">Characterization of an anthraquinone fluor from the bioluminescent, pelagic polychaete <i>Tomopteris</i></div></a>
+          </div>
+
+
       </div>
     </section>
 
