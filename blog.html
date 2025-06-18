@@ -22,8 +22,9 @@
     a { color: #4287b6; }
     a:visited { color: #8a38a9; }
     a:hover { color: #2fda97; }
-    body { background-color: black; color: #eee; font-family: Helvetica, Arial, sans-serif; text-align: center; font-size: 24px; }
+    body { background-color: black; color: #eee; font-family: Helvetica, Arial, sans-serif; text-align: left; font-size: 24px; }
     header { font-size: 24px; font-weight: bold; }
+    contact { text-align: center; font-size: 24px; }
     /* Style the header */
     /*
     header { background-color: #430f56; padding: 30px; text-align: center; font-size: 35px; color: white; }
@@ -35,11 +36,24 @@
     section::after { content: ""; display: table; clear: both; }
     footer { padding: 10px; text-align: center; color: white; }
     */
-    ul { list-style-type: none;  margin: 0;  padding: 0;  overflow: hidden;  background-color: black; position: fixed; top: 0; width: 100%;  }
-    li { float: left; }
-    li a { display: block;  text-align: center;  padding: 14px 20px;  text-decoration: none; }
-    li a:hover { background-color: #0d3365; }
 
+    .navbar {
+      ul { list-style-type: none;  margin: 0;  padding: 0;  overflow: hidden;  background-color: black; position: fixed; top: 0; width: 100%;  }
+      li { float: left; }
+      li a { display: block;  text-align: center;  padding: 14px 20px;  text-decoration: none; }
+      li a:hover { background-color: #0d3365; }
+    }
+    
+    p { line-height: 1.4; margin-bottom: 1.5em; }
+
+    article {
+    scroll-margin-top: 100px; 
+    }
+    article h1 {
+      font-size:2em;
+      margin-bottom: 10px;
+    }
+    
     @media (max-width: 600px) {
       nav, article {
         width: 100%;
@@ -52,9 +66,28 @@
 
     * { box-sizing: border-box; }
 
+    /* Left column */
+    .leftcolumn {   
+    padding: 2em;
+    float: left;
+    width: 75%;
+    }
+
+    /* Right column */
+    .rightcolumn {
+    float: left;
+    width: 25%;
+    padding-left: 20px;
+    height: 90vh;            /* Adjust as needed (e.g., 100vh minus header) */
+    overflow-y: auto;        /* Enables scrolling */
+    position: sticky;        /* Keeps it visible while scrolling */
+    top: 100px;              /* Adjust based on your navbar height */
+    }
+
     .responsive { display: grid; grid-template-columns: repeat(3, 1fr); }
     @media only screen and (max-width: 1000px) { .responsive { grid-template-columns: repeat(2, 1fr); } }
     @media only screen and (max-width: 600px) { .responsive { grid-template-columns: repeat(1, 1fr); } }
+    @media screen and (max-width: 800px) { .leftcolumn, .rightcolumn { width: 100%; padding: 0; } }
 
     .clearfix:after { content: ""; display: table; clear: both; }
 
@@ -69,7 +102,7 @@
       <div class="container">
         <div class="navbar-header page-scroll">
         <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-          <ul class="nav navbar-nav">
+          <ul class="navbar">
                 <li> <a class="page-scroll" href="index.html"> Home </a> </li>
                 <li> <a class="page-scroll" href=""> Top </a> </li>
                 <li style="float:right"> <a class="page-scroll" href="#contact">Contact</a> </li>
@@ -81,13 +114,114 @@
 
     <br><br><br><br>
 
-    <section id="blog" class="container content-section text-center">
-      <div class="row">
-        <h1 style="font-size:2em">Coming soon</h1><br>
-      </div>
-    </section>
+<section id="blog" class="container content-section text-left">
+  <div class="clearfix">
+
+    <div class="leftcolumn">
+
+        <article id="wallace-malacca">
+          <header>
+            <h1>Wallace in Malacca</h1>
+            <p><time datetime="2025-06-18">June 18, 2025</time></p>
+          </header>
+        <p> Here is a fictionalized scene with his field assistant Charles Allen, drinking from pitcher plants.</p>
+
+        <img src="img/wallace/Rainforest Sip of Curiosity.jpg" alt="Wallace and the Pitcher Plants" title="Wallace and the Pitcher Plants" height="600">
+        <br><br>
+
+        <p> In TMA, Wallace writes:<br><br>
+        "We had been told we should find water at Padang-batu, but we looked about for it in vain, as we were exceedingly thirsty. At last we turned to the pitcher-plants, but the water contained in the pitchers (about half a pint in each) was full of insects, and otherwise uninviting. On tasting it, however, we found it very palatable though rather warm, and we all quenched our thirst from these natural jugs." (ch.3, p.50)<br><br>
+        "The wonderful Pitcher-plants, forming the genus Nepenthes of botanists, here reach their greatest development. Every mountain-top abounds with them, running along the ground, or climbing over shrubs and stunted trees; their elegant pitchers hanging in every direction. Some of these are long and slender, resembling in form the beautiful Philippine lace sponge ( Euplectella ), which has now become so common; others are broad and short. Their colours are green, variously tinted and mottled with red or purple. The finest yet known were obtained on the summit of Kinabalu, in North-west Borneo. One of the broad sort, Nepenthes rajah , will hold two quarts of water in its pitcher. Another, Nepenthes edwardsiania , has a narrow pitcher twenty inches long; while the plant itself grows to a length of twenty feet." (ch.5, p.108)
+        </p>
+        </article>
+
+        <article id="wallace-borneo">
+          <header>
+            <h1>Wallace in Borneo</h1>
+            <p><time datetime="2025-06-17">June 17, 2025</time></p>
+          </header>
+        <p> Some exploratory concept art for an Alfred Russel Wallace manga, based on his writings in "The Malay Achipelago" (1869). Wallace wrote three chapters about Borneo, the wildlife, and the people.</p>
+        
+        <img src="img/wallace/Tropical Forest Perch.jpg" alt="Hornbill Perched in Tree" title="Hornbill Perched in Tree" height="600">
+        <img src="img/wallace/Rhinoceros Hornbill in Studio Ghibli Style.jpg" alt="Rhinoceros Hornbill" title="Rhinoceros Hornbill" height="600">
+        <p>For birds, Wallace had numerous sketches including a <a href="https://www.flickr.com/photos/wallace_memorial_fund/albums/72157711886180371/with/49103988528">drawing of a female hornbill from Borneo</a>, even though he did not discuss them extensively in TMA. In other writings, he states:<br><br>
+        "The rhinoceros hornbill sometimes exceeds four feet in length, and exhibits the greatest size reached in the Passerine order of birds. The exertion of flying is so great that it generally rests at intervals of about a mile on some very lofty tree, whence after a few minutes it resumes its flight. In some of the interior villages of Sumatra and Borneo, where a gun is never heard, they will settle upon and even build in trees in the village itself; but in more populous districts, where guns and Europeans abound, they are very shy, and take flight on seeing a man even at a considerable distance."</p>
 
 
+        
+        <img src="img/wallace/Nature's Encounter in the Longhouse.jpg" alt="Dayak with butterfly" title="Dayak with butterfly" height="600">
+        <img src="img/wallace/Delicate Butterfly in Gentle Hands_text.jpg" alt="Ornithoptera brookeana" title="Ornithoptera brookeana" height="600">
+        <br>* Ornithoptera brookeana has been renamed to <a href="https://en.wikipedia.org/wiki/Trogonoptera_brookiana"><i>Trogonoptera brookiana</i></a>.<br>
+        <p> This is a fictionalized scene of Wallace receiving a specimen from a generic "Dayak". He did spend some time discussing this butterfly, though. In, TMA, Wallace writes:<br><br>
+        "My collection of butterflies was not large; but I obtained some rare and very handsome insects, the most remarkable being the
+Ornithoptera brookeana , one of the most elegant species known. This beautiful creature has very long and pointed wings, almost resembling a sphinx moth in shape. It is deep velvety black, with a curved band of spots of a brilliant metallic-green colour extendingacross the wings from tip to tip, each spot being shaped exactly like a small triangular feather, and having very much the effect of a row of the wing coverts of the Mexican trogon laid upon black velvet. The only other marks are a broad neck-collar of vivid crimson, and a few delicate white touches on the outer margins of the hind wings. This species, which was then quite new and which I named after Sir James Brooke, was very rare. It was seen occasionally flying swiftly in the clearings, and now and then settling for an instant at puddles and muddy places, so that I only succeeded in capturing two or three specimens." (ch.4, p.57)<br><br>
+        </p>
+        
+       
+        <p>The orangutan, which he also calls "mias", gets an entire chapter.</p>
+        <img src="img/wallace/Orangutan in the Heart of Borneo.jpg" alt="Establishing shot of jungle with the orangutan" title="Jungle with the orangutan" height="600">
+        <img src="img/wallace/Jungle Encounter with a Mysterious Question.jpg" alt="Jungle Encounter with a Mysterious Question" title="Charlie Ready to Fire" height="600">
+        <p> This is a fictionalized scene, about the killing of one of the 17 orangutans. (ch.4 p.85). The establishing shot just shows the dense jungle with the many rivers where orangutans live. Wallace generally describes this kind of scene multiple times: <br><br>
+        "Exactly a week after I had caught this interesting little animal I succeeded in shooting a full-grown male Orangutan. I had just come home from an entomologizing excursion when Charles rushed in out of breath with running and excitement, and exclaimed, interrupted by gasps, 'Get the gun, sir—be quick—such a large Mias!' 'Where is it?' I asked, taking hold of my gun as I spoke, which happened luckily to have one barrel loaded with ball. 'Close by, sir—on the path to the mines—he can’t get away.' Two Dayaks chanced to be in the house at the time, so I called them to accompany me, and started off, telling Charley to bring all the ammunition after me as soon as possible." (ch.4, p.68)<br><br>
+        </p>
+        <p>Wallace had multiple encounters with <a href="https://en.wikipedia.org/wiki/James_Brooke">Sir James Brooke, the White Rajah of Sarawak</a>. Their <a href="https://archive.brooketrust.org/DA/showPerson.php?init=ARW">correspondance together is archived at the Brooke Trust</a> website. In TMA, he writes:<br><br>
+        "I was hospitably entertained by Sir James Brooke, and lived in his house whenever I was at the town of Saráwak in the intervals of my journeys." (ch.4, p.53)<br><br>
+        "On reaching Saráwak early in December I found there would not be an opportunity of returning to Singapore till the latter end of January. I therefore accepted Sir James Brooke’s invitation to spend a week with him and Mr. St. John at his cottage on Peninjauh. This is a very steep pyramidal mountain of crystalline basaltic rock, about a thousand feet high, and covered with luxuriant forest. There are
+three Dayak villages upon it, and on a little platform near the summit is the rude wooden lodge where the English Rajah was accustomed to
+go for relaxation and cool fresh air. It is only twenty miles up the river, but the road up the mountain is a succession of ladders on the face of precipices, bamboo bridges over gullies and chasms, and slippery paths over rocks and tree-trunks and huge boulders as big as houses. A cool spring under an overhanging rock just below the cottage furnished us with re- freshing baths and delicious drinking water, and the Dayaks brought us daily heaped-up baskets of mangosteens and lansats, two of the most delicious of the subacid tropical fruits. We returned to Saráwak for Christmas (the second I had spent with Sir James Brooke), when all the Europeans both in the town and from the outstations enjoyed the hospitality of the Rajah, who possessed in a pre-eminent degree the art of making everyone around him comfortable and happy." (ch.5, p.113)<br><br>
+        It was difficult to get the look of the age correct, as Brooke would have been 20 years older than Wallace.
+        </p>
+        <img src="img/wallace/Confident Explorer at Tropical Cave Entrance.jpg" alt="Portrait of Brooke" title="Portrait of Brooke" height="600">
+        <img src="img/wallace/Tropical Mansion at Dusk_text.jpg" alt="Tropical Mansion at Dusk" title="Tropical Mansion at Dusk" height="600">
+        <img src="img/wallace/Jungle Debate with Wine and Wicker_text.jpg" alt="Jungle Debate with Wine and Wicker" title="Jungle Debate with Wine and Wicker" height="600">
+        <p>This scene is also fictional, as Brooke's country cottage likely was much more rustic. The location is apparently <a href="https://maps.app.goo.gl/zngsXXaRiJH9jbwz5">here in the mountains</a>, stated to be at a place called Peninjau, south west of Kuching. The text in these is taken directly from Wallace's paper. A similar discussion is likely to have occurred, as Brooke and Wallace had mentioned the theory of evolution in letters, indicating that the two men most certainly talked about it.
+        
+        
+        </article>
+
+
+
+
+        <article id="durian">
+          <header>
+            <h1>Kings and Queens</h1>
+            <p><time datetime="2024-09-22">September 22, 2024</time></p>
+          </header>
+        <p> The durian and the mangosteen are two tropical fruits, found throughout south-east Asia. The two fruits differ greatly from each other, the mangosteen being a small, tart, and juicy fruit though overall does not have a strongly distinct flavor, while the durian is a fruit of its own. It is the size of a coconut with sharp, woody spines. The flavor is often difficult to describe. I recall a discussion with a Malay traveler who said "How can you describe what truffle smells like, other than truffle?". The durian is known for a strong odor is that not always appreciated, and for this reason it is banned from all hotels and public transport.</p>
+        <br>
+        <img src="img/travel/no_durian_subway_20230401_121910.jpg" alt="no durians allowed on Bangkok subway" title="no durians Thailand" height="300">
+        <img src="img/travel/no_durians_hotel_20230929_134636.jpg" alt="no durians allowed in hotel" title="no durians Thailand" height="300">
+        <img src="img/travel/no_durian_sabah_20240314_143423.jpg" alt="no durians allowed in hotel 2" title="no durians Malaysia" height="300">
+        <img src="img/travel/forbidden_kl_transport_20240106_181825.jpg" alt="things forbidden on KL public transit" title="Forbidden on KL transport" height="300">
+        <br>
+        <br>
+        <p> British naturalist Alfred Russel Wallace discusses the durian at length in an essay <a href="https://people.wku.edu/charles.smith/wallace/S027.htm"><i>"On the Bamboo and Durian of Borneo"</i></a>, where he wrote <i>"A rich custard highly flavoured with almonds gives the best general idea of it, but there are occasional wafts of flavour that call to mind cream-cheese, onion-sauce, sherry-wine, and other incongruous dishes."</i></p>
+        <p> I would describe the aroma as "generic garbage" (i.e. not a specific garbage like fish) or "raw onion cheese". The flavor is almost sickeningly sweet with the texture of custard. I have tried it in many forms including sticky rice, candy, mochi, ice cream, dried, and raw, and I would argue that none of them really improve on the basic flavor.</p>
+        <p> Wallace also had noted that the locals refer to the durian as the "King of fruits", and this is likewise true today. I suspect this reflects qualities that the people desire in a king, notably have a strong, fierce exterior, but sweet on the inside, and strongly smelling. That is, the durian is both loved and feared. During an informal survey, I found universal agreement that the durian is the king of fruits. When asked "What is the queen of fruits?", the answers were surprisingly varied: mangosteen, mango, coconut, champedek, or simply that there is no queen. At the time, Wallace had stated <i>"If I had to fix on two only as representing the perfection of the two classes, I should certainly choose the Durian and the Orange as the king and queen of fruits."</i> </p>
+        <p> It was brought to my attention that the durian is considering a "heating" fruit, while then mangosteen is a "cooling" fruit, meaning that the two are naturally a pair. They are sometimes served together. Orange is not a cooling fruit, while the coconut is. Thus, the coconut would seem to be a better match for the durian, as they are similarly sized, while the coconut is smooth instead of spiky.
+        </p>
+        </article>
+
+
+
+
+
+    </div>
+
+
+    <div class="rightcolumn">
+      <aside>
+        <h3>Articles</h3>
+        <ul>
+          <li><a href="#wallace-malacca">Wallace in Malacca</a></li>
+          <li><a href="#wallace-borneo">Wallace in Borneo</a></li>
+          <li><a href="#durian">Kings and Queens</a></li>
+        </ul>
+      </aside>
+    </div>
+
+  </div>
+</section>
     <section id="contact" class="container content-section text-center">
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
@@ -107,7 +241,7 @@
   <footer>
     <p><br></p>
     <div class="container text-center">
-      <p style="font-size:0.5em">Copyright &copy; WRF 2023</p>
+      <p style="font-size:0.5em">Copyright &copy; WRF 2025</p>
     </div>
     <p><br></p>
   </footer>
